@@ -144,6 +144,7 @@ if(MSVC) # msvc
 		"/W4"
 		"/w14640"
 		"/wd4251"
+		"/MT"
 	)
 endif()
 
@@ -154,6 +155,7 @@ if((CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT CMAKE_CXX_COMPILER_FRONTEND_VA
 		-Wshadow
 		-Wnon-virtual-dtor
 		-pedantic
+		-fPIC
 	)
 endif()
 
@@ -164,6 +166,7 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_C_COMPILER_ID STREQUAL "GNU") #
 		-Wshadow
 		-Wnon-virtual-dtor
 		-pedantic
+		-fPIC
 	)
 endif()
 

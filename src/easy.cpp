@@ -24,4 +24,13 @@ VmtHook create_vmt(void* object) {
         return {};
     }
 }
+
+VmtOriginalHook create_vmt_original(void* pVtable) {
+    if (auto hook = VmtOriginalHook::create(pVtable)) {
+        return std::move(*hook);
+    } else {
+        return {};
+    }
+}
+
 } // namespace safetyhook
